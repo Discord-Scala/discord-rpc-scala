@@ -2,24 +2,22 @@ package com.tsunderebug.drpc
 
 import club.minnced.discord.rpc.{DiscordRPC, DiscordRichPresence}
 
-import scala.util.Random
-
 case class RichPresence(
                          state: String = null,
                          details: String = null,
-                         startTimestamp: Long = null,
-                         endTimestamp: Long = null,
+                         startTimestamp: Long = 0,
+                         endTimestamp: Long = 0,
                          largeImageKey: String = null,
                          largeImageText: String = null,
                          smallImageKey: String = null,
                          smallImageText: String = null,
                          partyId: String = null,
-                         partySize: Int = null,
-                         partyMax: Int = null,
+                         partySize: Int = 0,
+                         partyMax: Int = 0,
                          matchSecret: String = null,
                          joinSecret: String = null,
                          spectateSecret: String = null,
-                         instance: Byte = new Random().nextLong().asInstanceOf[Byte]
+                         instance: Byte = 0
                        ) {
 
   def submit(): Unit = {
