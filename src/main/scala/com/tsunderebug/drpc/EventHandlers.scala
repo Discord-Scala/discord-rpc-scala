@@ -3,12 +3,12 @@ package com.tsunderebug.drpc
 import club.minnced.discord.rpc.DiscordEventHandlers
 
 case class EventHandlers(
-                        ready: () => Unit = null,
-                        disconnected: (Int, String) => Unit = null,
-                        errored: (Int, String) => Unit = null,
-                        joinGame: (String) => Unit = null,
-                        spectateGame: (String) => Unit = null,
-                        joinRequest: (JoinRequest) => Unit = null
+                        ready: () => Unit = () => {},
+                        disconnected: (Int, String) => Unit = (_, _) => {},
+                        errored: (Int, String) => Unit = (_, _) => {},
+                        joinGame: (String) => Unit = (_) => {},
+                        spectateGame: (String) => Unit = (_) => {},
+                        joinRequest: (JoinRequest) => Unit = (_) => {}
                         ) {
 
   def internal: DiscordEventHandlers = {
