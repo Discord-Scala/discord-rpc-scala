@@ -61,6 +61,7 @@ object RichPresence {
   def stop(): Unit = {
     if(workerThread != null) workerThread.interrupt()
     workerThread = null
+    DiscordRPC.INSTANCE.Discord_Shutdown()
   }
 
 }
